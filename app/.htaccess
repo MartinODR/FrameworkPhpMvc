@@ -1,0 +1,2 @@
+#this only deindexes the app folder but subfolders such as files are still accessible
+Options -Indexes
