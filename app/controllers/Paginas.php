@@ -4,7 +4,12 @@ class Paginas
 {
     public function __construct()
     {
-      //  echo 'Controlador Paginas Cargado';
+       echo 'Controlador Paginas Cargado<br>';
+    }
+
+    public function index()
+    {
+      
     }
 
     public function articulo()
@@ -12,8 +17,8 @@ class Paginas
 
     }
 
-    public function actualizar()
+    public function actualizar($num_registro)
     {
-
+        echo $num_registro;
     }
 }

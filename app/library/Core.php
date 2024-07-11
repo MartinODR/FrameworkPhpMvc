@@ -6,7 +6,7 @@
 3-Parametro
 Ejemplo: /articulos/actualizar/4
 */
-
+echo"Hello Core<br>";
 class Core
 {
     protected $controladorActual = 'Paginas';
@@ -16,7 +16,7 @@ class Core
     //constructor 
     public function __construct()
     {
-        // print_r($this->getUrl());  //test output:Array from explode() controller, method, parameter   
+         //print_r($this->getUrl());  //test output:Array from explode() controller, method, parameter   
         $url = $this->getUrl();    //test output: url
         //buscar en controladores si el controlador existe, si existe lo carga, si no carga el controlador por defecto 'Paginas'
         if (file_exists('../app/controllers/' .ucwords($url[0]).'.php')) {  //ucwords()toma del array[0] y lo incluye en la direccion 
@@ -26,10 +26,11 @@ class Core
             //unset indice [0]
             unset($url[0]);  //desmontar el controlador actual 
         }
+        // Array 0,1,2, 0=controlador, 1=metodoActual, 2=parametro
         //requerir el controlador nuevo
         require_once('../app/controllers/'.$this->controladorActual.'.php');
         $this->controladorActual = new $this->controladorActual;
-    
+     
         //chequear la segunda parte de la url que seria el metodo
         if(isset($url[1]))  //si se seteo el indice[1]
         {
@@ -41,15 +42,18 @@ class Core
                 unset($url[1]);  //desmontar el metodo actual 
             }
         }
-       // echo $this->metodoActual; //test:  traer metodo 
+        // echo $this->metodoActual; //test:  traer metodo 
 
        //obtener los posibles parametros 
+        $this->parametros = $url ? array_values($url) : []; //operador ternario PHP
 
+        //llamar callback con parametros array
+       call_user_func_array([$this->controladorActual, $this->metodoActual], $this->parametros);
     }
 
     public function getUrl()  
     {
-       // echo $_GET['url']; //imprimir en pantalla la url que se escriba
+      // echo $_GET['url']; //imprimir en pantalla la url que se escriba
 
        if(isset($_GET['url']))        //evaluar si la url esta configurada
        {

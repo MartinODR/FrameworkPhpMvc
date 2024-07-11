@@ -1,5 +1,5 @@
 <?php
-//echo "Hello Starter";
+echo "Hello Starter<br>";
 
 require_once 'library/Base.php';
 require_once 'library/Controller.php';
