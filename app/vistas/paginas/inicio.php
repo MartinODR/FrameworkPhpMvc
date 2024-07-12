@@ -1,6 +1,6 @@
 <?php
 
 
-echo "Hola Mundo";
+echo "<h1>Hola Mundo, inicio Vistas</h1>";
 
 ?>

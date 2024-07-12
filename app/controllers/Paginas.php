@@ -1,6 +1,6 @@
 <?php
 
-class Paginas
+class Paginas extends Controller
 {
     public function __construct()
     {
@@ -9,7 +9,7 @@ class Paginas
 
     public function index()
     {
-      
+      $this->vista('paginas/inicio');
     }
 
     public function articulo()
