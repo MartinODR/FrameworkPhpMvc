@@ -8,7 +8,7 @@ define('RUTA_APP', dirname(dirname(__FILE__))); //se define la ruta de nuestra a
 
 //Ruta URL Ejemplo: http://localhost/FrameworkPhpMvc/
 
-    define('RUTA_URL', '_URL_' ); //RUTA_URL 
+    define('RUTA_URL', 'http://localhost/FrameworkPhpMvc' ); //RUTA_URL 
 
     define('NOMBRESITIO', '_NOMBRE_SITIO');
 
