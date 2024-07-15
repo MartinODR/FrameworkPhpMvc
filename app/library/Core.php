@@ -6,7 +6,7 @@
 3-Parametro
 Ejemplo: /articulos/actualizar/4
 */
-echo"Hello Core<br>";
+echo"<br>Hello Core<br>";
 class Core
 {
     protected $controladorActual = 'Paginas';
