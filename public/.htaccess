@@ -5,7 +5,7 @@
     
     RewriteEngine On
     
-    RewriteBase /FrameworkPhpMvc/public
+    RewriteBase /FrameworkPhpMvc/public #cambiar ruta segun entorno 
     
     RewriteCond %{REQUEST_FILENAME} !-d
     
