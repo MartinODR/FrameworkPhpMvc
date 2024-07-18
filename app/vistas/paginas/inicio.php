@@ -14,6 +14,5 @@ echo "<h3></br>" . RUTA_APP . " :constante RUTA_APP desde app/config/configurar.
 <?php endforeach; ?> 
 </ul>
 
-<h2>Prueba de commiteo</h2>
 
 <?php require(RUTA_APP . '/vistas/inc/footer.php'); ?>
