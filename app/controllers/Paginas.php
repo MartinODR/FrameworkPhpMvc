@@ -11,8 +11,11 @@ class Paginas extends Controller
 
     public function index()
     {
+      $articulos = $this->articuloModelo->obtenerArticulos();
+
       $datos= [
-        'titulo' => 'Carga de app/controllers/Paginas/index, Metodo:index(), $datos[titulo]'  //index metodo 
+        'titulo' => 'Carga de app/controllers/Paginas/index, Metodo:index(), $datos[titulo]',  //index metodo 
+        'articulos' => $articulos
       ];
 
       $this->vista('paginas/inicio', $datos);
