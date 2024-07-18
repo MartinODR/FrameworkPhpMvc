@@ -3,10 +3,11 @@
 //define() Php creacion de constantes, para luego midificar en la creacion de proyectos 
 
 //configuracion de acceso a la base de datos 
+//test .gitignore testing if this are commited
 
 define('DB_HOST', 'localhost');
-define('DB_USUARIO', 'user');
-define('DB_PASSWORD', 'password');
+define('DB_USUARIO', 'usuario');
+define('DB_PASSWORD', 'contrasenia');
 define('DB_NOMBRE', 'db_name');
 
 //echo dirname(dirname(__FILE__));  //test dirname me permite devolverme a la categoria padre(retrocede una carpeta)
