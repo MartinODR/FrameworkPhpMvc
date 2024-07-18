@@ -19,12 +19,14 @@ class Core
         // print_r($this->getUrl());  //test output:Array from explode() controller, method, parameter   
         $url = $this->getUrl();    //test output: url
         //buscar en controladores si el controlador existe, si existe lo carga, si no carga el controlador por defecto 'Paginas'
-        if (file_exists('../app/controllers/' .ucwords($url[0]).'.php')) {  //ucwords()toma del array[0] y lo incluye en la direccion 
-            //si existe se setea como controlador por defecto 
-            $this->controladorActual = ucwords($url[0]);  
+        if(isset($url[0])){
+            if (file_exists('../app/controllers/' .ucwords($url[0]).'.php')) {  //ucwords()toma del array[0] y lo incluye en la direccion 
+                //si existe se setea como controlador por defecto 
+                $this->controladorActual = ucwords($url[0]);  
 
-            //unset indice [0]
-            unset($url[0]);  //desmontar el controlador actual 
+                //unset indice [0]
+                unset($url[0]);  //desmontar el controlador actual 
+            }
         }
         // Array 0,1,2, 0=controlador, 1=metodoActual, 2=parametro
         //requerir el controlador nuevo

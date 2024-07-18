@@ -4,7 +4,9 @@ class Paginas extends Controller
 {
     public function __construct()
     {
-       echo 'Controlador Paginas Cargado<br>';
+      $this->articuloModelo = $this->modelo('Articulo');
+
+      // echo 'Controlador Paginas Cargado<br>';
     }
 
     public function index()
@@ -26,3 +28,4 @@ class Paginas extends Controller
         echo $num_registro;
     }
 }
+
